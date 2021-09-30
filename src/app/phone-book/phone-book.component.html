@@ -1,0 +1,21 @@
+<h1>Phone Book</h1>
+<!-- <app-phone-book-filter (change) = "filter_users($event)"></app-phone-book-filter>  -->
+<input type="text" (input)="filter_users()" [(ngModel)]="filterdata" placeholder="Filter users on name/phone-number"/>
+<a routerLink='users/functionadd/add'> add customer </a>
+
+<label for="sort" >Sort By</label>
+<select name="sort" id="sort" [(ngModel)]="sort_by" (change)="handleSort()" value="sort by?">
+    <option value='firstName' >First Name </option>
+    <option value='lastName'>Last Name</option>
+    <option value='phoneNumber'> phone number </option>
+</select>
+
+
+
+<div *ngFor="let user of filter_array" >
+<app-phone-book-card [User]="user" (deletenumber)="handle_delete($event)"></app-phone-book-card>
+</div>
+
+<div *ngIf="!filter_array.length" >
+    <p> No Records Found </p>
+</div>
