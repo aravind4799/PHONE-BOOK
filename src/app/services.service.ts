@@ -27,7 +27,7 @@ export class ServicesService {
   
   }
   checkForUniqueNumber(p:number):boolean{
-    if(JSON.parse(localStorage.getItem('userdata')!).find((user: { phoneNumber: number; })=>user.phoneNumber===p)){return false}
+    if(JSON.parse(localStorage.getItem('userdata')!||"[]").find((user: { phoneNumber: number; })=>user.phoneNumber===p)){return false}
     else{return true}
   }
 

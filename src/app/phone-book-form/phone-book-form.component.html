@@ -9,12 +9,12 @@
     [ngModel]="dummyuser.firstName"
     placeholder="FirstName" 
     formControlName="firstName"
-    [ngClass]="{'error': userForm.get('firstName')!.invalid && userForm.get('firstName')!.touched}"
+    [ngClass]="{'error': userForm.get('firstName')!.invalid && (userForm.get('firstName')!.touched || userForm.get('firstName')!.dirty)}"
     >
    
-    <div *ngIf=" userForm.get('firstName')!.invalid && userForm.get('firstName')!.touched ">
+    <div *ngIf=" userForm.get('firstName')!.invalid && (userForm.get('firstName')!.touched || userForm.get('firstName')!.dirty) "> 
         <small *ngIf="userForm.get('firstName')!.errors?.required"> UserName Required </small>
-        <!-- <small *ngIf="!userForm.get('firstName')!.errors?.pattern"> Enter Valid Username(only alphabets accepted) </small> -->
+        <small *ngIf="userForm.get('firstName')!.errors?.pattern"> Enter Valid Username(only alphabets accepted) </small>
     </div>
    
     <label for="lastname">Last Name</label>
@@ -28,11 +28,12 @@
      <input 
      type="tel"
      formControlName="phoneNumber"
-     [ngModel]="dummyuser.phoneNumber"
-     [ngClass]="{'error': userForm.get('phoneNumber')!.invalid && userForm.get('phoneNumber')!.touched}"
+     [ngModel]="function==='Add' ? '':dummyuser.phoneNumber"
+     [ngClass]="{'error': userForm.get('phoneNumber')!.invalid && (userForm.get('phoneNumber')!.touched || userForm.get('phoneNumber')!.dirty)}"
      >
-     <div *ngIf="userForm.get('phoneNumber')!.invalid && userForm.get('phoneNumber')!.touched " >
-       
+
+     
+     <div *ngIf="userForm.get('phoneNumber')!.invalid && (userForm.get('phoneNumber')!.touched || userForm.get('phoneNumber')!.dirty ) " >
          <small *ngIf="userForm.get('phoneNumber')!.errors?.required"> Phone Number Required </small>
          <small *ngIf="userForm.get('phoneNumber')!.errors?.minlength"> Invalid Phone Number(10 digits expected) </small>
          <small *ngIf="userForm.get('phoneNumber')!.errors?.maxlength"> Invalid Phone Number(10 digits expected) </small>
@@ -42,4 +43,4 @@
 
 </form>
 <br/>
-<a RouterLink href="/" > view phonebook</a>
+<a routerLink="/" > view phonebook</a>
