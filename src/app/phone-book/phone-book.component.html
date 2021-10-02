@@ -1,21 +1,34 @@
-<h1>Phone Book</h1>
-<!-- <app-phone-book-filter (change) = "filter_users($event)"></app-phone-book-filter>  -->
-<input type="text" (input)="filter_users()" [(ngModel)]="filterdata" placeholder="Filter users on name/phone-number"/>
-<a routerLink='users/functionadd/add'> add customer </a>
 
-<label for="sort" >Sort By</label>
-<select name="sort" id="sort" [(ngModel)]="sort_by" (change)="handleSort()" value="sort by?">
+<!-- <app-phone-book-filter (change) = "filter_users($event)"></app-phone-book-filter>  -->
+
+<div class="phone-book-header">
+<div class="phone">
+ 
+<input class="phone_search" type="text" (input)="filter_users()" [(ngModel)]="filterdata" placeholder="Search"/>
+<select class="phone_filter" name="sort" id="sort" [(ngModel)]="sort_by" (change)="handleSort()" >
+    <option value="" disabled selected>Sort By</option>
     <option value='firstName' >First Name </option>
     <option value='lastName'>Last Name</option>
-    <option value='phoneNumber'> phone number </option>
+    <option value='phoneNumber'> Number </option>
 </select>
+</div>
 
 
 
-<div *ngFor="let user of filter_array" >
+
+
+
+<div *ngFor="let user of filter_array" class="phone_cards">
 <app-phone-book-card [User]="user" (deletenumber)="handle_delete($event)"></app-phone-book-card>
 </div>
 
-<div *ngIf="!filter_array.length" >
-    <p> No Records Found </p>
+<div *ngIf="!filter_array.length" class="RecordNotFound" >
+    <span> No Records Found </span> <span> <fa-icon [icon]="['fas','frown']" ></fa-icon>  </span>
 </div>
+
+<a routerLink='users/functionadd/add' class="btn phone_btn" > <fa-icon [icon]="['fas','plus']" ></fa-icon> New Contact   </a>
+
+</div>
+   
+
+

@@ -41,7 +41,7 @@ export class PhoneBookFormComponent implements OnInit {
   }
 
   userForm = this._formBuilder.group({
-    firstName:["",[Validators.required, Validators.pattern('^[a-zA-z]*$')]],
+    firstName:["",[Validators.required, Validators.pattern('^[a-zA-z ]*$')]],
     lastName:[''],
     phoneNumber:['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]
   })

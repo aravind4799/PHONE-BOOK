@@ -1,7 +1,25 @@
-<div class="phoneCard">
-    <p>{{User.firstName}}</p>
-    <p>{{User.lastName}}</p>
-    <p>{{User.phoneNumber}}</p>
-    <button (click)="onDelete(User.phoneNumber)">Delete</button>
-    <button (click)="onUpdate(User.phoneNumber)">Update</button>
+<div class="phonecard">
+  <div class="phonecard_content">
+    <div class="phonecard_content--name">
+        <span class="phonecard_content--firstname">{{User.firstName}}</span>
+        <span>{{User.lastName}}</span>
+      
+      </div>
+    <div class="phonecard_content--number">
+    <span>{{User.phoneNumber}}</span>
+   
+    
+    </div>
+   
+
+  </div>
+
+  <div class="phonecard_functions">
+    <a (click)="onDelete(User.phoneNumber)" class=" phonecard_functions--del">
+      <fa-icon [icon]="['fas', 'times']"></fa-icon>
+    </a>
+    <a (click)="onUpdate(User.phoneNumber)" class=" phonecard_functions--update">
+      <fa-icon [icon]="['fas', 'pen-square']"></fa-icon>
+    </a>
+  </div>
 </div>

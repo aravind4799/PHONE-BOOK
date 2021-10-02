@@ -1,3 +1,80 @@
 .error{
     border:1px solid red;
 }
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &_heading{
+        font-family: 'Shadows Into Light', sans-serif;
+        font-size:2.5rem;
+    }
+
+    &_content{
+        display: flex;
+        flex-direction: column;
+    
+        &--input{
+            background-color: rgba(250, 246, 246, 0.2);
+            border-radius: 10px;
+            padding:1rem 2rem;
+            outline: none;
+            margin-bottom:2rem;
+            width:350px;
+            font-size:1.2rem;
+        }
+        &--input:focus{
+            border:1px solid blue;
+        }
+        &_buttons{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         
+            &--submit{
+                border-radius: 100px;
+                font-family: 'Shadows Into Light', sans-serif;
+                background-color: white;
+                font-size: 2.5rem;
+                font-weight: bold;
+                border:none;
+                color:black;
+                margin-bottom:2rem;
+                margin-left:1rem;
+                &:hover{
+                    transform: translateY(-3px);
+                    color:blue;
+                }
+                &:disabled{
+                    text-decoration: line-through;
+                    transform: translate(0);
+                    color:black;
+                }
+            }
+            
+        }
+    }
+}
+
+.inputs{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &_error-text{
+       text-align: center;
+       color:red;
+       font-size:1rem;
+       margin-bottom:1rem;
+       font-family: 'Lato', sans-serif;
+    //    text-transform: uppercase;
+
+    }
+
+}
+.margin{
+    margin-left:2.2rem;
+}

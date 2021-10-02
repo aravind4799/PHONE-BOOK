@@ -1,4 +1,29 @@
-<router-outlet></router-outlet>
+
+
+<div class="home">
+
+<div class="home_header">
+    <div class="home_header--image">
+    <fa-icon [icon]="['fas', 'address-book']"></fa-icon>
+    </div>
+    <h1>Phone Book</h1>
+</div>
+
+
+<div class="home_content">
+
+<img class="home_content--image" src="../assets/images/insert_contacts.svg" alt="insert contact image"> 
+
+
+<div class="home_content--form">
+    <router-outlet></router-outlet>
+</div>
+
+</div>
+
+</div>
+
+
 
 
 

@@ -1,0 +1,46 @@
+
+
+.phone{
+    display:flex;
+    margin-bottom: 2rem;
+    
+    
+ 
+    &_search{
+        width:150px;
+        padding:.5rem 2rem;
+        border-radius: 60rem;
+        font-size:1.2rem;
+        font-family: 'Lato', sans-serif;
+        margin-right: 3rem;
+ 
+     }
+
+     &_filter{
+        width:190px;
+        padding:.5rem 2rem;
+        border-radius: 60px;
+        font-size:1.2rem;
+        font-family: 'Lato', sans-serif;
+
+    }
+  
+}
+
+
+.RecordNotFound{
+    font-family: 'Shadows Into Light', cursive;
+    font-size:2rem;
+    padding-top:2rem;
+    font-weight: bold;
+}
+
+.phone_btn{
+    width:30%;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.phone-book-header{
+    padding:30px 30px;
+}

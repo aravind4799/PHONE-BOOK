@@ -1,46 +1,64 @@
 
-<h1>{{function}} User</h1>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+<div class="form">
 
-    <label for="firstname">First Name</label>
+<h1 class="form_heading">{{function}} Contact</h1>
+
+<form class="form_content"[formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="inputs">
     <input 
-    type="text" 
+    type="text"
+    class="form_content--input" 
     id="firstname"
     [ngModel]="dummyuser.firstName"
-    placeholder="FirstName" 
+    placeholder=" Enter FirstName" 
     formControlName="firstName"
     [ngClass]="{'error': userForm.get('firstName')!.invalid && (userForm.get('firstName')!.touched || userForm.get('firstName')!.dirty)}"
     >
    
-    <div *ngIf=" userForm.get('firstName')!.invalid && (userForm.get('firstName')!.touched || userForm.get('firstName')!.dirty) "> 
-        <small *ngIf="userForm.get('firstName')!.errors?.required"> UserName Required </small>
-        <small *ngIf="userForm.get('firstName')!.errors?.pattern"> Enter Valid Username(only alphabets accepted) </small>
+    <div class="inputs_error-text" *ngIf=" userForm.get('firstName')!.invalid && (userForm.get('firstName')!.touched || userForm.get('firstName')!.dirty) "> 
+        <small *ngIf="userForm.get('firstName')!.errors?.required"> FirstName Required </small>
+        <small *ngIf="userForm.get('firstName')!.errors?.pattern"> Enter Valid Name </small>
     </div>
+</div>
    
-    <label for="lastname">Last Name</label>
+<div class="inputs">
     <input 
     type="text"
     formControlName="lastName"
+    class="form_content--input" 
+    placeholder=" Enter LastName"
     [ngModel]="dummyuser.lastName"
      >
+     </div>
 
-     <label for="phonenumber">Phone Number</label>
+    
+
+        <div class="inputs">
      <input 
      type="tel"
      formControlName="phoneNumber"
+     class="form_content--input" 
+     placeholder=" Enter Phone Number"
      [ngModel]="function==='Add' ? '':dummyuser.phoneNumber"
      [ngClass]="{'error': userForm.get('phoneNumber')!.invalid && (userForm.get('phoneNumber')!.touched || userForm.get('phoneNumber')!.dirty)}"
      >
-
-     
-     <div *ngIf="userForm.get('phoneNumber')!.invalid && (userForm.get('phoneNumber')!.touched || userForm.get('phoneNumber')!.dirty ) " >
+     <div  class="inputs_error-text" *ngIf="userForm.get('phoneNumber')!.invalid && (userForm.get('phoneNumber')!.touched || userForm.get('phoneNumber')!.dirty ) " >
          <small *ngIf="userForm.get('phoneNumber')!.errors?.required"> Phone Number Required </small>
          <small *ngIf="userForm.get('phoneNumber')!.errors?.minlength"> Invalid Phone Number(10 digits expected) </small>
          <small *ngIf="userForm.get('phoneNumber')!.errors?.maxlength"> Invalid Phone Number(10 digits expected) </small>
      </div>
 
-     <button  [disabled]="!userForm.valid" type="submit"> + {{function}} User</button>
+    </div>
 
+
+     <div class="form_content_buttons">
+        <button class="form_content_buttons--submit" [disabled]="!userForm.valid" type="submit"> Save </button>
+        <a routerLink="/" class="btn margin"><fa-icon [icon]="['fas','chevron-left']"></fa-icon> View Phonebook</a>
+
+     </div>
 </form>
 <br/>
-<a routerLink="/" > view phonebook</a>
+
+
+</div>

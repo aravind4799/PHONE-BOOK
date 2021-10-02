@@ -1,4 +1,83 @@
-.phoneCard{
+.phonecard{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size:1.2rem;
+    align-items: center;
+    border-radius:5px;
+    background-color:#F6F6F6;
+    margin:2rem 0;
+    animation:moveInRight;
+    animation-duration:2s;
+    box-shadow: 2px 1px  #888888;
+   
+
+
+    
+    &_content{
+        display: flex;
+        flex-direction: column;
+        
+        
+        &--number{
+           font-family: 'Lato', cursive;
+           text-align: center;
+           padding-top: .5rem;
+          
+
+        }
+        &--name{
+            display: flex;
+            font-family: 'Lato', cursive;
+             letter-spacing:4px;
+             padding-top: .5rem;
+             text-align: center;
+             font-weight: bold;
+        }
+        &--firstname{
+            padding-right:2rem;
+
+        }
+
+    }
+    &_functions{
+        justify-content: center;
+        font-size:1.5rem;
+        &--del{
+            display:inline-block;
+            padding-right: 2rem;
+            &:hover{
+                transform:scale(1.2);
+                color:red;
+            }
+        }
+        &--update{
+            display:inline-block;
+           
+            &:hover{
+                transform:scale(1.2);
+                color:blue;
+            }
+        }
+        
+
+    }
+}
+
+
+@keyframes moveInRight{
+    0%{
+        opacity:0;
+        transform: translateX(100px);
+    }
+    80%{
+        opacity: .8;
+        transform: translateX(-10px);
+
+    }
+    100%{
+        opacity: 1;
+        transform:translat(0);
+
+    }
 }
