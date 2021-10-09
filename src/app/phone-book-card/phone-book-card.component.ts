@@ -30,10 +30,6 @@ export class PhoneBookCardComponent implements OnInit {
   @Input() deleteNumber!:number
   @Output() deletenumber:EventEmitter<number> = new EventEmitter<number>();
 
- 
- 
-
-
 
   onDelete(p:number): void {
     if(confirm("Process cannot be revoked!!\n Delete this user")){
@@ -41,8 +37,6 @@ export class PhoneBookCardComponent implements OnInit {
     this.deletenumber.emit(p);
 
     }
-    
-
 
   }
   onUpdate(p:number): void {
