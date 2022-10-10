@@ -22,11 +22,12 @@
 <app-phone-book-card [User]="user" (deletenumber)="handle_delete($event)"></app-phone-book-card>
 </div>
 
-<div *ngIf="!filter_array.length" class="RecordNotFound" >
+<div *ngIf="!filter_array.length" class="RecordNotFound phone_btn" >
     <span> No Records Found </span> <span> <fa-icon [icon]="['fas','frown']" ></fa-icon>  </span>
 </div>
 
-<a routerLink='users/functionadd/add' class="btn phone_btn" > <fa-icon [icon]="['fas','plus']" ></fa-icon> New Contact   </a>
+
+<a routerLink="users/functionadd/add" class="btnbtn phone_btn"><fa-icon [icon]="['fas','plus']"></fa-icon> New Contacts</a>
 
 </div>
    

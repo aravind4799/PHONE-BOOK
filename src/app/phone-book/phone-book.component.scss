@@ -30,8 +30,8 @@
 
 .RecordNotFound{
     font-family: 'Shadows Into Light', cursive;
-    font-size:2rem;
-    padding-top:2rem;
+    font-size:1.5rem;
+    padding:3rem 0;
     font-weight: bold;
 }
 
@@ -46,11 +46,8 @@
 }
 
 
-body{
-    background-color:#EEEEEE;
-}
-.btn:link,
-.btn:visited{
+
+.btnbtn{
     text-decoration:none;
     display: inline-block;
     font-family: 'Shadows Into Light',sans-serif;
@@ -59,17 +56,19 @@ body{
     padding:10px 20px;
     background-color:rgba(0, 0, 0, 0.8);
     color:#ffff;
-    border-radius: 100px;
+    border-radius: 200px;
     transition: all .2s;
 }
 
-
-.btn:hover{
+.btnbtn:hover{
     transform: translateY(-3px);
     box-shadow:0 10px 20px rgba(0,0,0,.3);
-
 }
-.btn:active{
+
+.btnbtn:active{
     transform:translateY(-1px);
     box-shadow:0 5px 10px rgba(0,0,0,.3);
+
 }
+
+
